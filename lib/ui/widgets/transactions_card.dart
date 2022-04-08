@@ -1,23 +1,15 @@
+import 'package:bank_dashboard/models/transaction/transaction_model.dart';
 import 'package:bank_dashboard/ui/shared/colors.dart';
 import 'package:bank_dashboard/ui/shared/spacing.dart';
 import 'package:bank_dashboard/ui/shared/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class TransactionsCard extends StatelessWidget {
-  const TransactionsCard(
-      {Key? key,
-      required this.title,
-      required this.subTitle,
-      required this.amount,
-      required this.date,
-      required this.image})
+  const TransactionsCard({Key? key, required this.transaction})
       : super(key: key);
 
-  final String title;
-  final String subTitle;
-  final String amount;
-  final String date;
-  final String image;
+  final TransactionModel transaction;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,24 +18,26 @@ class TransactionsCard extends StatelessWidget {
           height: 60,
           width: 60,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                  image: AssetImage(
-                image,
-              )),
-              color: kWhiteColor),
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              image: AssetImage(
+                transaction.image,
+              ),
+            ),
+            color: kWhiteColor,
+          ),
         ),
         horizontalSpaceRegular,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              transaction.title,
               style: kSubtitleTextStyle.copyWith(color: kBlackColor),
             ),
             verticalSpaceSmall,
             Text(
-              subTitle,
+              transaction.description,
               style: kTinyRegularTextStyle.copyWith(color: kBlackColor),
             ),
           ],
@@ -53,12 +47,12 @@ class TransactionsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              amount,
+              transaction.amount,
               style: kSubtitleTextStyle.copyWith(color: kBlackColor),
             ),
             verticalSpaceSmall,
             Text(
-              date,
+              transaction.date,
               style: kSmallRegularTextStyle.copyWith(color: kBlackColor),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:bank_dashboard/models/transaction/transaction_model.dart';
 import 'package:bank_dashboard/responsive.dart';
 import 'package:bank_dashboard/ui/shared/colors.dart';
 import 'package:bank_dashboard/ui/shared/edge_insect.dart';
@@ -97,37 +98,9 @@ class DashBoardView extends StatelessWidget {
                         cardText: 'See all',
                       ),
                       verticalSpaceRegular,
-                      const TransactionsCard(
-                        title: 'Fund wallet',
-                        subTitle: 'to Jackson Botox',
-                        amount: '\$289,00',
-                        date: '4 hours ago',
-                        image: 'assets/icons/face1.png',
-                      ),
-                      verticalSpaceSmall,
-                      const TransactionsCard(
-                        title: 'Transfer',
-                        subTitle: 'to James Brown',
-                        amount: '\$289,00',
-                        date: '4th March, 2022 at 05:30 pm',
-                        image: 'assets/icons/face2.png',
-                      ),
-                      verticalSpaceSmall,
-                      const TransactionsCard(
-                        title: 'Transfer',
-                        subTitle: 'to Jacob Jons',
-                        amount: '\$289,00',
-                        date: '19th March, 2022 at 04:30 pm',
-                        image: 'assets/icons/face3.png',
-                      ),
-                      verticalSpaceSmall,
-                      const TransactionsCard(
-                        title: 'Transfer',
-                        subTitle: 'to James David',
-                        amount: '\$289,00',
-                        date: '30th March, 2022 at 04:30 pm',
-                        image: 'assets/icons/icon_step.png',
-                      ),
+                      for (final transaction in transactionsData) ...[
+                        TransactionsCard(transaction: transaction),
+                      ],
                       verticalSpaceRegular,
                       if (!Responsive.isDesktop(context))
                         const SizedBox(height: defaultPadding),
