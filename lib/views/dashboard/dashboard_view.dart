@@ -18,7 +18,6 @@ class DashBoardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     final Size _size = MediaQuery.of(context).size;
 
     return Row(
@@ -61,7 +60,6 @@ class DashBoardView extends StatelessWidget {
                     Container(
                       padding: kEdgeInsetsHorizontalNormal,
                       height: height * 0.06,
-                      // width: width * 0.08,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: kWhiteColor),

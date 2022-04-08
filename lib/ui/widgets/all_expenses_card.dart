@@ -14,7 +14,6 @@ class AllExpensesCard extends ViewModelWidget<MainViewModel> {
   @override
   Widget build(BuildContext context, viewModel) {
     final height = MediaQuery.of(context).size.height;
-    // final width = MediaQuery.of(context).size.width;
 
     return Container(
       padding: kEdgeInsetsHorizontalTiny,
@@ -59,7 +58,6 @@ class AllExpensesCard extends ViewModelWidget<MainViewModel> {
                 Expanded(
                   child: CheckboxListTile(
                     visualDensity: VisualDensity.comfortable,
-                    // contentPadding: kEdgeInsetsHorizontalTiny,
                     controlAffinity: ListTileControlAffinity.leading,
                     activeColor: kBlackColor,
                     side: const BorderSide(color: kTertiaryColor4),

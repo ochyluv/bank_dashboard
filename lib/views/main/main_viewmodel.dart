@@ -6,22 +6,22 @@ class MainViewModel extends BaseViewModel {
 
   GlobalKey<ScaffoldState> get scaffoldKey => _scaffoldKey;
 
+  bool _receivedCheckValue = true;
+  bool get receivedCheckValue => _receivedCheckValue;
+
+  bool _sendCheckValue = false;
+  bool get sendCheckValue => _sendCheckValue;
+
   void controlMenu() {
     if (!_scaffoldKey.currentState!.isDrawerOpen) {
       _scaffoldKey.currentState!.openDrawer();
     }
   }
 
-  bool _receivedCheckValue = true;
-  bool get receivedCheckValue => _receivedCheckValue;
-
   void onReceivedCheckChanged(value) {
     _receivedCheckValue = value;
     notifyListeners();
   }
-
-  bool _sendCheckValue = false;
-  bool get sendCheckValue => _sendCheckValue;
 
   void onSendCheckChanged(value) {
     _sendCheckValue = value;

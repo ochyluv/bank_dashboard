@@ -10,12 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Admin Panel',
+      title: 'Bank Dashboard',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kWhiteColor,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)

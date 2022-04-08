@@ -1,7 +1,7 @@
 import 'package:bank_dashboard/responsive.dart';
 import 'package:bank_dashboard/ui/shared/spacing.dart';
 import 'package:bank_dashboard/ui/widgets/side_menu.dart';
-import 'package:bank_dashboard/views/dashboard_view.dart';
+import 'package:bank_dashboard/views/dashboard/dashboard_view.dart';
 import 'package:bank_dashboard/views/main/main_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
