@@ -12,8 +12,6 @@ class QuickTransferCard extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    final ScrollController scrollController = ScrollController();
-
     return Container(
       height: height * 0.35,
       padding: kEdgeInsetsAllNormal,
@@ -35,7 +33,6 @@ class QuickTransferCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: SingleChildScrollView(
-                    controller: scrollController,
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: const [
@@ -79,11 +76,11 @@ class QuickTransferCard extends StatelessWidget {
                 ),
                 horizontalSpaceTiny,
                 GestureDetector(
-                  onTap: () => scrollController.animateTo(
-                    100,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  ),
+                  // onTap: () => scrollController.animateTo(
+                  //   100,
+                  //   duration: const Duration(milliseconds: 300),
+                  //   curve: Curves.easeInOut,
+                  // ),
                   child: const Icon(
                     Icons.arrow_forward_ios,
                     color: kBlackColor,
